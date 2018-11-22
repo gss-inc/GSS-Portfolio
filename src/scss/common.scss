@@ -1,0 +1,34 @@
+/*
+#overview
+ステップフォワードBGC校スタイルガイド
+Stepforward BGC school design style guide
+*/
+
+@charset "utf-8";
+
+/*
+  Foundation
+*/
+@import "normalize.css/normalize.css";
+@import "foundation/_mixin";
+@import "foundation/_variable";
+@import "foundation/_font-family";
+@import "foundation/_base";
+
+/*
+  Plugin
+*/
+@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../node_modules/slick-carousel/slick/slick-theme.scss";
+
+/*
+  Layout
+*/
+@import "layout/**";
+
+/*
+  Object
+*/
+@import "object/component/**";
+@import "object/project/**";
+@import "object/utility/**";

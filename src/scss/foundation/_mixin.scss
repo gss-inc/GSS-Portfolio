@@ -1,0 +1,236 @@
+// Break point
+@mixin breakpoint($point) {
+  @if $point == tablet {
+    @media (min-width: 641px) {
+      @content ;
+    }
+  }
+  @if $point == pc {
+    @media (min-width: 769px) {
+      @content ;
+    }
+  }
+  @if $point == sp {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
+// @desc - class名とルールセットを指定することで、レスポンシブに対応したスタイルを生成します。
+// @param {String} - 共通のclass名をクウォートとドットをつけて渡します（e.g. `.foo`）。
+// @param {Strind} - 使用するブレイクポイントを定義した変数を渡します。
+// @see - foundation/variable/_breakpoint.scss
+// @example scss - Usage
+// @include _responsive(".display-none") {
+//   display: none;
+// }
+// @example css - CSS output
+// .display-none {
+//   display: none;
+// }
+// @media screen and (min-width: 400px) {
+//   .display-none-sm {
+//     display: none;
+//   }
+// }
+@mixin _responsive($class, $bp: $_breakpoint-up) {
+  #{$class} {
+    @content;
+  }
+  @each $suffix, $value in $bp {
+    @media #{$value} {
+      #{$class}-#{$suffix} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin beforeafter {
+  content: "";
+  display: block;
+}
+
+@mixin _clearfix($important: false) {
+  @if ($important == "important") {
+    $important: unquote("!important");
+  }
+  @else {
+    $important: null;
+  }
+  &::after {
+    content: "" $important;
+    display: block $important;
+    clear: both $important;
+  }
+}
+
+@mixin opacity($opacity, $color01:#000) {
+  background-color: rgba($color01, $opacity);
+}
+
+@mixin _c-list-unstyled() {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+@mixin _c-list-mark() {
+  display: table;
+  @include _c-list-unstyled();
+}
+
+@mixin _c-list-mark__item() {
+  display: table-row;
+}
+
+@mixin _c-list-mark__icon($padding-right: 0.25em) {
+  display: table-cell;
+  width: 1em;
+  padding-right: $padding-right;
+  text-align: center;
+}
+
+@mixin _c-list-mark__items() {
+  @include _c-list-unstyled();
+}
+
+@mixin _c-layout() {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  list-style-type: none;
+}
+
+@mixin _c-layout__item() {
+  display: inline-block;
+  width: 100%;
+  font-size: medium;
+  font-size: 1rem;
+  vertical-align: top;
+}
+
+@mixin _c-flag() {
+  display: table;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+// @param $gutter - 画像とテキストの間の余白を指定します。
+@mixin _c-flag__image($gutter) {
+  display: table-cell;
+  width: 1px;
+  margin: 0;
+  padding: 0;
+  padding-right: $gutter;
+  vertical-align: top;
+  > img {
+    max-width: none;
+  }
+}
+
+@mixin _c-flag__body() {
+  display: table-cell;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin _c-section__desc() {
+  margin: 0 auto;
+  font-family: Noto Sans Japanese, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: justify;
+  @include breakpoint(sp) {
+    font-size: 3.733vw;
+    line-height: 1.8;
+  }
+}
+
+@mixin _c-bordered-text($font-size) {
+  font-size: $font-size;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: $_color-h2-bordered;
+    z-index: -1;
+  }
+}
+
+@mixin blue-border {
+  &::before {
+    @include breakpoint(sp) {
+      width: 26.666vw;
+      height: 1.46vw;
+      top: -1px;
+    }
+    position: absolute;
+    width: 101px;
+    height: 6px;
+    background-color: #0080ba;
+    top: -2px;
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@mixin table-border {
+  border: 10px solid #fff;
+  @include breakpoint(sp) {
+    border: 1.333vw solid #fff;
+  }
+}
+
+@mixin bg-gradient($angle: 180deg, $color1: #d0ecf3, $start: 0%, $color2: #fff, $end: 90%) {
+  background: linear-gradient($angle, $color1 $start, $color2 $end);
+}
+
+/*
+*
+*   $arg1 accepts margin, padding and font-size
+*    @include converter-sp(padding,30);
+*    @include converter-sp(padding,30,30);
+*    @include converter-sp(padding,30,30,30);
+*    @include converter-sp(padding,30,30,30,30);
+*
+*/
+
+@mixin converter-sp($arg...) {
+  @if nth($arg, 1) == padding or nth($arg, 1) == margin {
+    @if length($arg) <= 5 {
+      $val: 0;
+      $val-vw: 0;
+      @for $i from 2 through length($arg) {
+        $val : $val + px-vw(nth($arg, $i)) *  1% + ' ';
+        $val-vw : $val-vw + px-vw(nth($arg, $i)) *  1vw + ' ';
+      }
+      #{nth($arg, 1)}: unquote($val);
+      #{nth($arg, 1)}: unquote($val-vw);
+    }
+  }
+  @if nth($arg,1) == font-size {
+    #{nth($arg, 1)}: px-rem(nth($arg, 2)) * 1rem;
+    #{nth($arg, 1)}: px-vw(nth($arg, 2)) * 1vw;
+  }
+}
+
+@function px-vw($num, $reso: 750) {
+  @return 100 / $reso * $num;
+}
+
+@function px-rem ($num) {
+  @return px-vw($num * 0.75);
+}

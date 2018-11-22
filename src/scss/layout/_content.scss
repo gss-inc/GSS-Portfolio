@@ -1,0 +1,32 @@
+/*
+#overview
+Content
+*/
+
+/*
+#styleguide
+categories: [layout]
+
+`<article>`タグが使われるようなメインコンテンツのスタイルです。
+ナビゲーションやバナーなどのレイアウトを含むことはできますが、コンポーネント自体はobject/projectレイヤーで定義します。
+It is the main content style that uses the `<article>` tag.
+Although this can include layouts such as navigation and banner, the component itself is defined by the object / project layer.
+
+```
+e.g.
+<article class="l-content s-blog">
+  <h2 class="l-content__lead"></h2>
+</article>
+```
+*/
+
+.l-content {
+  // @include breakpoint( tablet ) {
+  // }
+  // @include breakpoint( pc ) {
+  // }
+  // @include breakpoint( wide ) {
+  // }
+  // @include breakpoint( full ) {
+  // }
+}

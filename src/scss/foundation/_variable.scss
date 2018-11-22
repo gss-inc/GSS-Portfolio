@@ -1,0 +1,149 @@
+// base color
+$_color-text: #333 !default;
+$_color-bg: #fff !default;
+$_color-h2-bordered: #efefef !default;
+$_color-h2: #4dadd0 !default;
+$_color-schedule: #808080 !default;
+$_color-black: #000 !default;
+$_color-highlight: #fff846 !default;
+$_line-height-sp: 1.8 !default;
+$_color-member-1: #73c9dc !default;
+$_color-member-2: #95ccd8 !default;
+
+// link color
+$_color-link: #2b7baa !default;
+$_color-link--visited: null !default;
+$_color-link--hover: lighten($_color-link, 15%) !default;
+$_color-contact-link: #0080ba !default;
+$_color-contact-link--visited: null !default;
+$_color-contact-link--hover: lighten($_color-contact-link, 15%) !default;
+$_color-education-btn: #556980;
+
+// button color
+$_color-button: #ff5540 !default;
+$_color-button--hover: #ff8879 !default;
+
+// component color
+$_color-ui-border: #ddd !default;
+$_color-ui-bg: #fff !default;
+$_color-main-bg: #e7e7e7 !default;
+$_color-flow-border-bg: #0080ba !default;
+$_color-flow-step-bg: #0080ba !default;
+$_color-flow-arrow: #0080ba !default;
+
+//price-lesson-table
+$span-bg: #eeedcf !default;
+$span-border: #d7dfaf !default;
+
+// price-table color
+$_color-table-head: #1c2b42 !default;
+$_color-table-body: #f0f0f0 !default;
+$_color-table-first-col: #0080ba !default;
+$_color-table-discounted: #9c9c9c !default;
+
+// border
+$_color-light-border: #f0f0f0 !default;
+$_color-dotted-border: #80d3ff !default;
+
+// footer
+$_color-footer-bg: #3e3e3e !default;
+$_color-footer-nav: #222 !default;
+
+// min-width
+$_breakpoint-up: (
+  'sm': 'screen and (min-width: 400px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1000px)',
+  'xl': 'screen and (min-width: 120px)',
+) !default;
+
+// max-width
+$_breakpoint-down: (
+  'sm': 'screen and (max-width: 399px)',
+  'md': 'screen and (max-width: 767px)',
+  'lg': 'screen and (max-width: 999px)',
+  'xl': 'screen and (max-width: 1199px)',
+) !default;
+
+// default breakpoint
+$_default-breakpoint: 'md';
+
+// default wrapper width
+$_max-width: 96px !default;
+
+// default grid columns
+$_column: 12 !default;
+
+// base font-size
+$_font-size: (
+  'sm': 15px,
+  'md': 16px,
+) !default;
+
+$_font-size--large: 16px !default;
+$_font-size--small: 0.8em !default;
+
+// base font-weight
+$_font-weight-light: 30;
+$_font-weight-normal: 40;
+$_font-weight-bold: 6;
+
+// base Rounded corners
+$_radius: 3px !default;
+
+// base animation speed
+$_duration: 0.3s !default;
+
+// base spacing
+$_white-space: 1.7rem !default;
+$_white-space--small: ($_white-space / 2) !default;
+$_white-space--large: ($_white-space * 2) !default;
+
+// `transition-timing-function`と`animation-timing-function`プロパティに指定する、
+// cubic-bezier() 関数記法で定義した、3次ベジェ曲線のタイミング関数です。
+// 実際に動きは、以下のサイトで確認できます。
+// https://matthewlein.com/ceaser/
+//
+// デフォルトのタイミング関数には以下のような特徴があります。
+// easeは「ゆっくりと」、inは「始まる」、outは「終わる」に置き換えると想像しやすいです。
+// * linear - 一定の速度で変化する
+// * ease - 開始時から急速に加速して、中盤から緩やかになる
+// * ease-in - 緩やかに始まり、次第に加速し、突然停止する
+// * ease-in-out - 緩やかに始まり、加速が緩やかになっていく
+// * ease-out - 急速に始まり、次第に緩やかになっていく
+
+$_linear: cubic-bezier(0.25, 0.25, 0.75, 0.75) !default;
+$_ease: cubic-bezier(0.25, 0.1, 0.25, 1) !default;
+
+// ease
+$_ease-in: cubic-bezier(0.42, 0, 1, 1) !default;
+$_ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53) !default;
+$_ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19) !default;
+$_ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22) !default;
+$_ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06) !default;
+$_ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715) !default;
+$_ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035) !default;
+$_ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335) !default;
+$_ease-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045) !default;
+
+// ease-out
+$_ease-out: cubic-bezier(0, 0, 0.58, 1) !default;
+$_ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94) !default;
+$_ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1) !default;
+$_ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1) !default;
+$_ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1) !default;
+$_ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1) !default;
+$_ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1) !default;
+$_ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1) !default;
+$_ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275) !default;
+
+// ease-in-out
+$_ease-in-out: cubic-bezier(0.42, 0, 0.58, 1) !default;
+$_ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955) !default;
+$_ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+$_ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1) !default;
+$_ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1) !default;
+$_ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95) !default;
+$_ease-in-out-expo: cubic-bezier(1, 0, 0, 1) !default;
+$_ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86) !default;
+$_ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55) !default;

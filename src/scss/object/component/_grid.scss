@@ -1,0 +1,51 @@
+.c-grid {
+  width: 100%;
+  box-sizing: border-box;
+
+  // @include breakpoint( tablet ) {
+  // }
+  // @include breakpoint( pc ) {
+  // }
+  // @include breakpoint( wide ) {
+  // }
+  // @include breakpoint( full ) {
+  // }
+}
+
+.c-grid__alt {
+  display: flex;
+  justify-content: space-between;
+  @include breakpoint(sp) {
+    flex-direction: column;
+    .c-grid__alt-1 {
+      order: 2;
+    }
+    .c-grid__alt-2 {
+      order: 1;
+    }
+  }
+  &:nth-child(even) {
+    .c-grid__alt-1 {
+      order: 2;
+    }
+    .c-grid__alt-2 {
+      order: 1;
+    }
+  }
+}
+
+.c-grid__def {
+  display: flex;
+  justify-content: space-between;
+  @include breakpoint(sp) {
+    display: block;
+  }
+}
+
+.l-order--1 {
+  order: 1;
+}
+
+.l-order--2 {
+  order: 2;
+}

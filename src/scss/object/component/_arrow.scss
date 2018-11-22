@@ -1,0 +1,65 @@
+.c-arrow {
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #969696;
+    border-right: 2px solid #969696;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -5px;
+  }
+  &--red {
+    @extend .c-arrow;
+    &::after {
+      // border-top: 2px solid $color--red;
+      // border-right: 2px solid $color--red;
+    }
+  }
+}
+
+.c-arrow2 {
+  &::before {
+    content: "";
+    position: absolute;
+    left: 6.933vw;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 3.867vw;
+    width: 2.533vw;
+    background: url(/images/common/sp/white-arrow.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+}
+
+.c-accordion {
+  &::before {
+    @include breakpoint(sp) {
+      content: "";
+      position: absolute;
+      right: 4%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3.8%;
+      height: 26.7%;
+      background: url(/images/common/sp/plus-white.png);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+}
+
+.js-accordion-active {
+  &::before {
+    @include breakpoint(sp) {
+      height: 9% !important;
+      background: url(/images/common/sp/minus-white.png) !important;
+    }
+  }
+}

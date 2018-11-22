@@ -1,0 +1,145 @@
+@mixin animated {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  transition: 0.5s;
+}
+
+// Fade-in / Fade-out
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin fade-in {
+  @include animated();
+  animation-name: fade-in;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@mixin fade-out {
+  @include animated();
+  animation-name: fade-out;
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin fade-in-up {
+  @include animated();
+  animation-name: fade-in-up;
+}
+
+@keyframes fade-out-down {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@mixin fade-out-down {
+  @include animated();
+  animation-name: fade-out-down;
+}
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@mixin fade-in-left {
+  @include animated();
+  animation-name: fade-in-left;
+}
+
+@keyframes fade-out-left {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+@mixin fade-out-left {
+  @include animated();
+  animation-name: fade-out-left;
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@mixin fade-in-right {
+  @include animated();
+  animation-name: fade-in-right;
+}
+
+@keyframes fade-out-right {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+
+@mixin fade-out-right {
+  @include animated();
+  animation-name: fade-out-right;
+}
+
+.u-fade {
+  &-in {
+    opacity: 0;
+    &-active {
+      @include fade-in();
+    }
+  }
+  &-up {
+    opacity: 0;
+    &-active {
+      @include fade-in-up();
+    }
+  }
+}

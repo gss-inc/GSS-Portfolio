@@ -1,0 +1,42 @@
+/*
+#overview
+Section
+*/
+
+/*
+#styleguide
+categories: [layout]
+
+`<section>`タグを使うようなセクションの余白（`margin`）を管理します。
+コンポーネント単位での余白はobject/utility/_margin.scssで管理をします。
+This manages the margins of sections that use the `<section>` tag.
+The margins in component units are managed by object/utility/_ margin.scss.
+
+<section> 要素の内容が単独で配信して意味がある場合は、代わりに <article> 要素を使用してください。
+If the meaning of the <section> element alone is transmitted, use the <article> element instead.
+
+```
+e.g.
+<section class="l-section">
+  <h2>見出し2</h2>
+</section>
+<section class="l-section l-section--small">
+  <h2>見出し2</h2>
+</section>
+<div class="l-section l-section--large">
+  <h2>見出し2</h2>
+</div>
+```
+*/
+
+.l-section {
+  padding-top: 45px;
+  // @include breakpoint( tablet ) {
+  // }
+  // @include breakpoint( pc ) {
+  // }
+  // @include breakpoint( wide ) {
+  // }
+  // @include breakpoint( full ) {
+  // }
+}

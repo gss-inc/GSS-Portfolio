@@ -1,0 +1,180 @@
+/*
+#overview
+Floating
+*/
+
+/*
+#styleguide
+categories: [project]
+
+常に画面の一番下に表示されるフローティングフッターです。
+It is a floating footer that always appears at the bottom of the screen.
+
+```
+<div class="p-floating u-fade-in-active">
+  <div class="p-floating-wrap">
+    <div class="c-btn-group u-align--left">
+      <a href="#" class="l-headerBtn__btn c-button u-m-r-10"><img src="images/common/white-right-arrow.png" alt="お申込み" class="c-btn-group__img">お申込み</a>
+      <a href="#" class="l-headerBtn__btn c-button"><img src="images/common/white-right-arrow.png" alt="お問合わせ" class="c-btn-group__img">お問合わせ</a>
+    </div>
+    <div class="p-floating__contact">
+      <img src="images/top/blue-phone-icon.png" alt="contact" class="p-floating__phone-icon">
+      <a href="tel:+000000000" class="p-floating__telephone">0000-00-000</a>
+    </div>
+    <p class="p-floating__schedule">受付時間[月-金] 00:00 - 00:00</p>
+    <div class="p-floating__social">
+      <ul class="u-lists--inline">
+        <li class="u-lists__item u-m-r-5">
+          <a href="#">
+            <img src="images/top/facebook-icon.png" alt="facebook">
+          </a>
+        </li>
+        <li class="u-lists__item u-m-r-5">
+          <a href="#">
+            <img src="images/top/twitter-icon.png" alt="twitter">
+          </a>
+        </li>
+        <li class="u-lists__item">
+          <a href="#">
+            <img src="images/top/instagram-icon.png" alt="instagram">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.p-floating {
+  position: fixed;
+  bottom: 0;
+  display: none;
+  width: 100%;
+  min-width: 1210px;
+  padding: 8px 0 7px;
+  z-index: 3;
+  @include breakpoint(sp) {
+    padding: 0;
+    min-width: inherit;
+    width: 100vw;
+  }
+  &-wrap {
+    display: flex;
+    max-width: 1210px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    @include breakpoint(sp) {
+      max-width: 768px;
+      height: 100px;
+      height: 13.334vw;
+      padding: 0 1%;
+    }
+    .c-btn-group {
+      @include breakpoint(sp) {
+        @include converter-sp(margin,0,25,0,0);
+      }
+    }
+  }
+  &__telephone {
+    color: $_color-contact-link;
+    font-size: 3.2rem;
+    vertical-align: middle;
+    font-family: "Arial", sans-serif;
+    font-weight: 600;
+    @include breakpoint(sp) {
+      display: none;
+    }
+  }
+  &__schedule {
+    font-size: 1.2rem;
+    color: $_color-schedule;
+    font-weight: 700;
+    @include breakpoint(sp) {
+      display: none;
+    }
+  }
+  &__contact {
+    @include breakpoint(sp) {
+      display: none;
+    }
+  }
+  &__phone-icon {
+    vertical-align: middle;
+    display: inline-block;
+  }
+  &__social {
+    &--sp {
+      img {
+        &:last-child {
+          display: none;
+        }
+      }
+      @include breakpoint (sp) {
+        img {
+          &:first-child {
+            display: none;
+          }
+          &:last-child {
+            display: inline-block;
+            width: 100%;
+          }
+        }
+      }
+      .u-lists__item {
+        margin-right: 10px;
+        vertical-align: middle;
+        @include breakpoint (sp) {
+          margin-right: 2.666vw;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        &__top {
+          display: block;
+          width: 40px;
+          height: 40px;
+          background: url(../images/common/top-arrow.png) no-repeat;
+          @include breakpoint (sp) {
+            width: 44px;
+            height: 44px;
+            background: url(../images/common/sp/top-arrow.png) no-repeat;
+            background-size: contain;
+          }
+          &:hover {
+            background: url(../images/common/top-arrow-hover.png) no-repeat;
+          }
+        }
+        // &:nth-child(2) {
+        //   margin: 0 11px 0 8px;
+        //   @include breakpoint (sp) {
+        //     @include converter-sp(margin,0,33,0,35);
+        //   }
+        // }
+        // &:nth-child(3) {
+        //   @include breakpoint (sp) {
+        //     @include converter-sp(margin,0,33,0,0);
+        //   }
+        // }
+      }
+    }
+  }
+}
+
+.js-floating--fixed {
+  display: block;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.95);
+    filter: blur(1.5px);
+    @include breakpoint(sp) {
+      height: 100px;
+    }
+  }
+}

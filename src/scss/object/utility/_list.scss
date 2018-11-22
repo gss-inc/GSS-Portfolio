@@ -1,0 +1,12 @@
+.u-lists {
+  &--inline {
+    padding: 0;
+    list-style-type: none;
+  }
+  &__item {
+    display: inline-block;
+  }
+  &__item-block {
+    display: block;
+  }
+}

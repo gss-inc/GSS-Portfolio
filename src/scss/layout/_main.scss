@@ -1,0 +1,33 @@
+/*
+#overview
+Main
+*/
+
+/*
+#styleguide
+categories: [layout]
+
+`<main>`タグのスタイルです。ドキュメントのメインコンテンツを示し、ドキュメント内で1つしか記述できません。
+<article>タグや<nav>タグなどの中に入れることはできません。
+The style of the `<main>` tag.
+It shows the main content of the document, and it can only describe one in the document.
+
+```
+e.g.
+<body>
+  <main id="l-main">
+  </main>
+</body>
+```
+*/
+
+#l-main {
+  // @include breakpoint( tablet ) {
+  // }
+  // @include breakpoint( pc ) {
+  // }
+  // @include breakpoint( wide ) {
+  // }
+  // @include breakpoint( full ) {
+  // }
+}

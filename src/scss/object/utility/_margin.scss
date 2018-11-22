@@ -1,0 +1,23 @@
+$spaceamounts: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
+$sides: (top, bottom, left, right);
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .u-m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+    .u-sp-m-#{str-slice($side, 0, 1)}-#{$space} {
+      @include breakpoint(sp) {
+        margin-#{$side}: #{$space}px !important;
+      }
+    }
+    .u-p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+    .u-sp-p-#{str-slice($side, 0, 1)}-#{$space} {
+      @include breakpoint(sp) {
+        padding-#{$side}: #{$space}px !important;
+      }
+    }
+  }
+}
