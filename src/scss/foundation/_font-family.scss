@@ -1,33 +1,15 @@
 @font-face {
-  font-family: Yu Gothic;
-  src: local('Yu Gothic.otf');
+  font-family: 'Montserrat';
+  src: local('../fonts/Montserrat-Regular.ttf');
 }
 
 @font-face {
-  font-family: 'Noto Sans Japanese';
-  src:
-    local('NotoSansJP-Regular.otf'),
-    url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff2) format('woff2'),
-    url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff) format('woff'),
-    url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.otf) format('opentype');
-}
-
-@font-face {
-  font-family: 'Noto Sans Japanese';
-  src:
-    local('NotoSansJP-Medium.otf'),
-    url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.woff2) format('woff2'),
-    url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.woff) format('woff'),
-    url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.otf) format('opentype');
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: 'Noto Sans Japanese';
-  src:
-    local('NotoSansJP-Bold.otf'),
-    url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff2) format('woff2'),
-    url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff) format('woff'),
-    url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.otf) format('opentype');
+  font-family: 'Montserrat';
+  src: local('../fonts/Montserrat-Bold.ttf');
   font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Questrial';
+  src: local('../fonts/Questrial-Regular.ttf');
 }

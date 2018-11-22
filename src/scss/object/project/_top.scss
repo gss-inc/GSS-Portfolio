@@ -1,0 +1,123 @@
+%wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    height: 335px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    &__title {
+        font-size: 6rem;
+        letter-spacing: 3.5px;
+        font-family: 'Questrial', serif;
+        color: #000;
+    }
+    &__desc {
+        margin-top: 50px;
+        font-size: 2.2rem;
+    }
+}
+
+.technology {
+    @extend %wrapper;
+    padding: 50px 0;
+    &__item {
+        font-size: 1.8rem;
+        color: #868686;
+        margin-top: 35px;
+        padding-left: 35px;
+        position: relative;
+        &:first-of-type {
+            margin-top: 0;
+        }
+        &::before {
+            content: '';
+            background: url('../images/common/right-arrow.png') center no-repeat;
+            background-size: contain;
+            width: 13px;
+            height: 11px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+        }
+    }
+}
+
+.works {
+    @extend %wrapper;
+    padding: 40px 0;
+}
+
+.tab {
+    &-slider {
+        &--nav {
+            width: 100%;
+            display: flex;
+            margin-bottom: 80px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &--tabs {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: relative;
+            background: #fff;
+            height: 35px;
+            align-items: center;
+            user-select: none; 
+        }
+        &--trigger {
+            font-size: 1.6rem;
+            color: #868686;
+            text-align: center;
+            padding: 10px 20px;
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+            display: inline-block;
+            transition: color 250ms ease-in-out;
+            user-select: none; 
+            &.active {
+                color: #000;
+                &::before {
+                    border: 1px solid #000;
+                    position: absolute;
+                    content: '';
+                    height: 100%;
+                    width: 100%;
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+        &--body {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.card {
+    &__imgWrapper {
+        height: 400px;
+        overflow: hidden;
+        &--bg {
+            background-color: #fff000;
+        }
+    }
+    &__title {
+        font-size: 3rem;
+        font-family: 'Questrial', serif;
+        margin-top: 45px;
+        color: #000;
+    }
+    &__desc {
+        margin-top: 40px;
+    }
+}

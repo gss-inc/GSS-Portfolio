@@ -1,118 +1,13 @@
-/*
-#overview
-title
-*/
-
-/*
-#styleguide
-サンプル見出し1
-サンプルの見出しスタイル
-hoverすると青く2倍になる
-
-```
-<h1 class="c-title-h1">見出し1</h1>
-<h2 class="c-title-h2">見出し2</h2>
-```
-*/
-
-.c-title-h1 {
-  font-size: 4rem;
-  transition: 200ms ease-out transform;
-  color: orange;
-  &:hover {
-    color: blue;
-    transform: translate(10px, 0);
-  }
-}
-
-.c-title-h2 {
-  font-size: 4.6rem;
-  font-weight: bold;
-  color: $_color-h2;
-  text-align: center;
-  position: relative;
-  @include breakpoint(sp) {
-    font-size: 5vw;
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    top: calc(100% + 25px);
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 2px;
-    border-top: 2px solid #4dadd0;
-    @include breakpoint(sp) {
-      width: 10.667%;
-      top: 175%;
+.section {
+    &-title {
+        font-weight: 800;
+        color: #000;
+        font-size: 2.2rem;
+        margin-bottom: 80px;
+        &--slider {
+            display: inline;
+            margin: 0;
+        }
     }
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    width: 170px;
-    height: 88px;
-    transform: translate(-50%, -50%);
-    background: url(/images/common/title-bg.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    @include breakpoint(sp) {
-      width: 22.933%;
-      height: 11.733vw;
-    }
-  }
 }
-
-.c-title-h3 {
-  font-size: 3.8rem;
-  text-align: center;
-  font-weight: bold;
-  @include breakpoint(sp) {
-    font-size: 3.6rem;
-    font-size: 4.8vw;
-  }
-}
-
-.c-title-h2-bordered {
-  position: relative;
-  @include _c-bordered-text(3.8rem);
-  text-align: center;
-  margin-bottom: 92px;
-  @include breakpoint(sp) {
-    font-size: 3.6rem;
-    font-size: 4.8vw;
-    margin-bottom: 12.667%;
-    &::before {
-      top: -92%;
-      top: -5.333vw;
-      height: 300%;
-      height: 17.2vw;
-    }
-  }
-}
-
-.c-title-h4 {
-  font-size: 2.4rem;
-  font-weight: bold;
-  color: $_color-h2;
-  text-align: left;
-  position: relative;
-  @include breakpoint(sp) {
-    @include converter-sp(font-size, 32);
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    width: 80px;
-    height: 2px;
-    border-top: 2px solid #4dadd0;
-    @include breakpoint(sp) {
-      top: calc(100% + 40%);
-    }
-  }
-}
+    
