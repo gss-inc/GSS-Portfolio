@@ -55,7 +55,7 @@ var tmp = {
 /* publicディレクトリ */
 var public = {
   'root': 'public/',
-  'html': 'public/**/*.html',
+  'html': 'public/*.html',
   'image': 'public/images/',
   'css': 'public/css/',
   'js': 'public/js/'
@@ -79,37 +79,10 @@ gulp.task('default', ['clean:tmp'], function() {
 // });
 
 /**
- * 出力用のディレクトリを削除します。
- */
-gulp.task('clean:tmp', function (cb) {
-  return rimraf(tmp.root, cb);
-});
-
-gulp.task('build', function(callback) {
-  runSequence(
-    ['html', 'check-html', 'css', 'imagemin', 'js'], callback
-  )
-});
-
-gulp.task('server', function(){
-  browserSync.init({
-    server: {
-      baseDir: tmp.root,
-      middleware:[
-        ssi({
-          ext: '.html',
-          baseDir: tmp.root
-        })
-      ]
-    }
-  });
-});
-
-/**
  * /public/以下のHTMLファイルを監視、更新があれば反映します。
  */
 gulp.task('html', function() {
-  return gulp.src(public.html)
+  return gulp.src(src.html)
   .pipe(browserSync.reload({stream: true}));
 });
 
@@ -123,7 +96,7 @@ gulp.task('check-html', function(){
     .pipe(htmlv())
     .pipe(htmlv.reporter())
     .pipe(gulp.dest(tmp.root))
-    .pipe(gulp.dest(public.root))
+    .pipe(gulp.dest(public.root));
 });
 
 gulp.task('sass', function(){
@@ -137,10 +110,6 @@ gulp.task('sass', function(){
       css: '../tmp/css/common.css'
     }))
     .pipe(sassGlob())
-    .pipe(postcss([
-      stylelint(),
-      reporter({clearMessages: true, throwError: true})
-    ], {syntax: syntax_scss}))
     .pipe(sass({
       outputStyle: 'expanded'
     }))
@@ -203,6 +172,33 @@ function bundle(watching = false) {
   }
   return bundler();
 }
+
+/**
+ * 出力用のディレクトリを削除します。
+ */
+gulp.task('clean:tmp', function (cb) {
+  return rimraf(tmp.root, cb);
+});
+
+gulp.task('build', function(callback) {
+  runSequence(
+    ['html', 'check-html', 'css', 'imagemin', 'js'], callback
+  )
+});
+
+gulp.task('server', function(){
+  browserSync.init({
+    server: {
+      baseDir: tmp.root,
+      middleware:[
+        ssi({
+          ext: '.html',
+          baseDir: tmp.root
+        })
+      ]
+    }
+  });
+});
 
 gulp.task('js', function() {
   bundle();

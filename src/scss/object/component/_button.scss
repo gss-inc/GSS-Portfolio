@@ -1,0 +1,23 @@
+.btn {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    &--bordered {
+        border: 1px solid #ddd;
+        margin-top: 45px;
+        color: #fff;
+        &:hover {
+            background-color: #fff;
+            color: #000;
+            transition: .5s;
+            .btn__img {
+                filter: none;
+            }
+        }
+    }
+    &__img {
+        margin-left: 15px;
+        filter: brightness(100);
+    }
+}
