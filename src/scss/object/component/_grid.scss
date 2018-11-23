@@ -1,51 +1,28 @@
-.c-grid {
-  width: 100%;
-  box-sizing: border-box;
-
-  // @include breakpoint( tablet ) {
-  // }
-  // @include breakpoint( pc ) {
-  // }
-  // @include breakpoint( wide ) {
-  // }
-  // @include breakpoint( full ) {
-  // }
-}
-
-.c-grid__alt {
-  display: flex;
-  justify-content: space-between;
-  @include breakpoint(sp) {
-    flex-direction: column;
-    .c-grid__alt-1 {
-      order: 2;
+.column {
+    display: flex;
+    width: 100%;
+    &__item {
+        flex: 1;
     }
-    .c-grid__alt-2 {
-      order: 1;
+    &--dynamic {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        .card {
+            width: 45.45%;
+            &:nth-of-type(odd) {
+                margin-right: 85px;
+                margin-top: -157px;
+            }
+            &:nth-of-type(even) {
+                margin-top: 90px;
+            }
+            &:first-of-type {
+                margin-top: 0;
+            }
+            &:nth-of-type(2) {
+                margin-top: 225px;
+            }
+        }
     }
-  }
-  &:nth-child(even) {
-    .c-grid__alt-1 {
-      order: 2;
-    }
-    .c-grid__alt-2 {
-      order: 1;
-    }
-  }
-}
-
-.c-grid__def {
-  display: flex;
-  justify-content: space-between;
-  @include breakpoint(sp) {
-    display: block;
-  }
-}
-
-.l-order--1 {
-  order: 1;
-}
-
-.l-order--2 {
-  order: 2;
 }

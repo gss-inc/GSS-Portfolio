@@ -9,18 +9,15 @@ html {
 }
 
 body {
-  color: #333;
-  // background-color: $color-background-color;
-  // font-family: $global-font-family-sans-serif;
-  position: relative;
+  color: #292929;
   word-wrap: break-word;
   overflow-wrap: break-word;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: auto;
   font-kerning: normal;
-  font-family: 'Noto Sans Japanese', serif;
+  font-family: 'Montserrat', serif;
   margin: 0 auto;
-  min-width: 1210px;
+  min-width: 1200px;
   font-size: 1.6rem;
   overflow: hidden;
   @include breakpoint(sp) {
@@ -30,56 +27,35 @@ body {
   }
 }
 
-/*
-  ブロック要素の上下のマージンをリセットします。
-*/
 h1, h2, h3, h4, h5, h6, ul, ol, dl, blockquote, p, address, hr, table, pre {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-/**
- * iOSのSafariとChromeで、`text-decoration: underline;`の罫線が
- * グリフやディセンダで途切れないようにします。
- * https://css-tricks.com/almanac/properties/t/text-decoration-skip/
- */
 a {
-  -webkit-text-decoration-skip: none;
   text-decoration: none;
   transition: 0.3s;
-  // color: #2b70ba;
   &:hover, &:active, &:focus {
     text-decoration: none;
-    // color: #5997d9;
   }
-  // @include _on-event {
-  //   text-decoration: underline;
-  //   color: $_color-link--hover;
-  // }
 }
 
 img {
   max-width: 100%;
   height: auto;
-  // vertical-align: middle;
 }
 
-ul, ol {
-  padding-left: 1em;
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-/**
- * ネストされたリストのマージンをリセットします。
- */
 li {
   > ul, > ol {
     margin-bottom: 0;
   }
 }
 
-/**
- * `dt`と`dd`の左端を揃えます。
- */
 dd {
   margin-left: 0;
 }

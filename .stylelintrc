@@ -1,0 +1,35 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-no-unknown": [ true, {
+      ignoreAtRules: [
+        'extend', 'at-root', 'debug', 'nth',
+        'warn', 'error', 'if', 'else', 'stylelint-commands',
+        'for', 'each', 'while', 'mixin',
+        'include', 'content', 'return', 'function'
+      ]
+    }],
+    "at-rule-empty-line-before": [
+      "always",
+        {
+          "except": ["inside-block"],
+          "ignore": ["blockless-after-blockless", "after-comment"]
+        }
+    ],
+    "no-invalid-double-slash-comments": null,
+    "comment-empty-line-before": [
+      "always",
+        {
+          "ignore": ["after-comment", "stylelint-commands"]
+        }
+    ],
+    "rule-empty-line-before": [ "always-multi-line",
+      {
+        "except": ["inside-block"],
+        "ignore": ["after-comment"]
+      }
+    ],
+    "selector-list-comma-newline-after": ["always-multi-line"],
+    "declaration-empty-line-before": ["never"]
+  }
+}
