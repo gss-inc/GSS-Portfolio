@@ -33,16 +33,7 @@ $(function() {
     });
   }
 
-  function fadeTabAnimation() {
-    $(".tab-slider--nav li").click(function() {
-      setTimeout( function () {
-        $(".card").removeClass("u-fade-up-active");
-      }, 500);
-    });
-  }
-
   $(window).on("load scroll", function(){
-    fadeTabAnimation();
     fade("u-fade-up");
   });
 

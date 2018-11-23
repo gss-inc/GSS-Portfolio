@@ -69,20 +69,25 @@ gulp.task('default', ['clean:tmp'], function() {
   )
 });
 
-// /**
-//  * Gulpの処理を通さないディレクトリです。
-//  * テスト用のディレクトリにコピーします。
-//  */
-// gulp.task('public', function() {
-//   return gulp.src(src.public)
-//   .pipe(gulp.dest(tmp.root));
-// });
 
+gulp.task('server', function(){
+  browserSync.init({
+    server: {
+      baseDir: tmp.root,
+      middleware:[
+        ssi({
+          ext: '.html',
+          baseDir: tmp.root
+        })
+      ]
+    }
+  });
+});
 /**
  * /public/以下のHTMLファイルを監視、更新があれば反映します。
  */
 gulp.task('html', function() {
-  return gulp.src(src.html)
+  return gulp.src(public.html)
   .pipe(browserSync.reload({stream: true}));
 });
 
@@ -184,20 +189,6 @@ gulp.task('build', function(callback) {
   runSequence(
     ['html', 'check-html', 'css', 'imagemin', 'js'], callback
   )
-});
-
-gulp.task('server', function(){
-  browserSync.init({
-    server: {
-      baseDir: tmp.root,
-      middleware:[
-        ssi({
-          ext: '.html',
-          baseDir: tmp.root
-        })
-      ]
-    }
-  });
 });
 
 gulp.task('js', function() {
