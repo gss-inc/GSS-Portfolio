@@ -10,18 +10,41 @@
         align-items: flex-start;
         .card {
             width: 45.45%;
+            @include breakpoint(sp) {
+                width: 42.45%;
+            }
             &:nth-of-type(odd) {
                 margin-right: 85px;
                 margin-top: -157px;
+                @include breakpoint(sp) {
+                    @include converter-sp(margin,20,85,0,0);
+                }
             }
             &:nth-of-type(even) {
                 margin-top: 90px;
+                @include breakpoint(sp) {
+                    @include converter-sp(margin,90,0,0);
+                }
             }
             &:first-of-type {
                 margin-top: 0;
             }
             &:nth-of-type(2) {
                 margin-top: 225px;
+                @include breakpoint(sp) {
+                    @include converter-sp(margin,120,0,0);
+                }
+            }
+        }
+    }
+    &--collapse {
+        @include breakpoint(sp) {
+            flex-wrap: wrap;
+        }
+        .column__item {
+            @include breakpoint(sp) {
+                flex: 50%;
+                @include converter-sp(margin,0,0,35);
             }
         }
     }

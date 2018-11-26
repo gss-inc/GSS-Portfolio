@@ -7,6 +7,11 @@
     padding: 0 10px;
     border-radius: 8px;
     margin-top: 30px;
+    @include breakpoint(sp) {
+        height: 2.999vw;
+        @include converter-sp(font-size,12);
+        @include converter-sp(margin,30,0,0);
+    }
     &-green {
         background: #03d457;
     }
