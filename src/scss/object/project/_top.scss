@@ -169,6 +169,23 @@
             opacity: 0;
             text-align: center;
             transition: 0.5s opacity ease;
+            @include breakpoint(sp) {
+                opacity: 1;
+                position: absolute;
+                bottom: 0;
+                display: block;
+                width: 100%;
+                color: #fff;
+                @include converter-sp(padding,5,0);
+                @include converter-sp(font-size,16);
+                background: linear-gradient(45deg, #f76b1c 0%, #f76b1c 34%, #fad961 100%);
+            }
+            img {
+                @include breakpoint(sp) {
+                    width: 2.172vw;
+                    vertical-align: middle;
+                }
+            }
         }
         &:hover {
             box-shadow: 0 1px 18px 0 rgba(0, 0, 0, 0.14);
@@ -188,6 +205,9 @@
                 bottom: 0;
                 z-index: 1;
                 transition: 0.5s opacity ease;
+                @include breakpoint(sp) {
+                    display: none;
+                }
             }
             .card__imgWrapper-logo {
                 z-index: 2;
@@ -199,9 +219,17 @@
                 left: 50%;
                 transform: translateX(-50%);
                 z-index: 2;
+                @include breakpoint(sp) {
+                    transform: initial;
+                    bottom: 0;
+                    left: 0;
+                }
                 img {
                     display: block;
                     margin: 0 auto;
+                    @include breakpoint(sp) {
+                        display: inline-block;
+                    }
                 }
                 span {
                     margin-top: 20px;
@@ -210,6 +238,12 @@
                     font-size: 1.4rem;
                     color: #fff;
                     text-transform: uppercase;
+                    @include breakpoint(sp) {
+                        margin: 0;
+                        font-weight: 400;
+                        text-transform: none;
+                        @include converter-sp(font-size,16);
+                    }
                 }
             }
         }
