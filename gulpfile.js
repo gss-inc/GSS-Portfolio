@@ -35,7 +35,7 @@ var gulp = require('gulp'),
 /* developディレクトリ */
 var src = {
   'root': 'src/',
-  'html': 'src/.html',
+  'html': 'src/**/*.html',
   'css': ['src/scss/*.scss', 'src/scss/**/*.scss'],
   // 'js': ['src/js/**/*.js', '!js/min/**/*.js'],
   'js': 'src/js/script.js',
@@ -55,7 +55,7 @@ var tmp = {
 /* publicディレクトリ */
 var public = {
   'root': 'public/',
-  'html': 'public/*.html',
+  'html': 'public/**/*.html',
   'image': 'public/images/',
   'css': 'public/css/',
   'js': 'public/js/'
