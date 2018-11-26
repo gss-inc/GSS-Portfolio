@@ -1,24 +1,54 @@
 .footer {
     @extend %wrapper;
     position: relative;
+    @include breakpoint(sp) {
+        @include converter-sp(padding,0,40);
+    }
     &__top {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 35px 0;
+        @include breakpoint(sp) {
+            @include converter-sp(padding,35,0, 15);
+            flex-direction: column;
+        }
+        img {
+            @include breakpoint(sp) {
+                width: 39.374vw;
+            }
+        }
         ul {
             width: 40%;
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             height: 80px;
+            @include breakpoint(sp) {
+                height: auto;
+                width: 100%;
+                text-align: center;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                justify-content: space-between;
+                @include converter-sp(margin,20,0,0);
+            }
             li {
+                @include breakpoint(sp) {
+                    display: inline-block;
+                }
                 &:nth-of-type(even) {
                     margin-top: 32px;
+                    @include breakpoint(sp) {
+                        margin: 0;
+                    }
                 }
                 a {
                     font-size: 1.7rem;
                     color: #868686;
+                    @include breakpoint(sp) {
+                        @include converter-sp(font-size,17);
+                    }
                 }
             }
         }
@@ -28,6 +58,10 @@
         border-top: 1px solid #ddd;
         color: #868686;
         font-size: 1.6rem;
+        @include breakpoint(sp) {
+            @include converter-sp(font-size,16);
+            @include converter-sp(padding,25,0);
+        }
 
     }
 }

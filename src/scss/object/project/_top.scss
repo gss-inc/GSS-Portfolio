@@ -11,28 +11,47 @@
     flex-direction: column;
     background: url('../images/pc/hero-bg.jpg') center no-repeat;
     background-size: cover;
+    @include breakpoint(sp) {
+        height: 43.677vw;
+        @include converter-sp(padding,0,40);
+    }
     &__title {
         font-size: 6rem;
         letter-spacing: 3.5px;
         font-family: 'Questrial', serif;
         color: #fff;
+        @include breakpoint(sp) {
+            @include converter-sp(font-size,35);
+        }
     }
     &__desc {
         color: #fff;
         margin-top: 50px;
         font-size: 2.2rem;
+        @include breakpoint(sp) {
+            @include converter-sp(font-size,22);
+            @include converter-sp(margin,50,0,0);
+        }
     }
 }
 
 .technology {
     @extend %wrapper;
     padding-bottom: 50px;
+    @include breakpoint(sp) {
+        @include converter-sp(padding,40,40,50);
+    }
     &__item {
         font-size: 1.8rem;
         color: #868686;
         margin-top: 35px;
         padding-left: 35px;
         position: relative;
+        @include breakpoint(sp) {
+            @include converter-sp(padding,0,0,0,35);
+            @include converter-sp(font-size,18);
+            @include converter-sp(margin,35,0,0);
+        }
         &:first-of-type {
             margin-top: 0;
         }
@@ -46,6 +65,9 @@
             top: 50%;
             transform: translateY(-50%);
             left: 0;
+            @include breakpoint(sp) {
+                width: 1.694vw;
+            }
         }
     }
 }
@@ -53,6 +75,9 @@
 .works {
     @extend %wrapper;
     padding: 40px 0 50px;
+    @include breakpoint(sp) {
+        @include converter-sp(padding,40,40,50);
+    }
 }
 
 .tab {
@@ -63,6 +88,10 @@
             margin-bottom: 80px;
             align-items: center;
             justify-content: space-between;
+            @include breakpoint(sp) {
+                display: block;
+                @include converter-sp(margin,0,0,40);
+            }
         }
         &--tabs {
             display: flex;
@@ -74,6 +103,9 @@
             height: 35px;
             align-items: center;
             user-select: none; 
+            @include breakpoint(sp) {
+                justify-content: space-between;
+            }
         }
         &--trigger {
             font-size: 1.6rem;
@@ -86,6 +118,9 @@
             display: inline-block;
             transition: color 250ms ease-in-out;
             user-select: none; 
+            @include breakpoint(sp) {
+                @include converter-sp(font-size,18);
+            }
             &.active {
                 color: #000;
                 &::before {
@@ -102,6 +137,9 @@
         &--body {
             margin-bottom: 20px;
             padding: 0 80px;
+            @include breakpoint(sp) {
+                padding: 0;
+            }
         }
     }
 }
@@ -111,6 +149,9 @@
         height: 300px;
         overflow: hidden;
         position: relative;
+        @include breakpoint(sp) {
+            height: 19.557vw;
+        }
         & > img {
             width: 100%;
             transition: 0.5s transform ease;
@@ -178,9 +219,17 @@
         font-family: 'Questrial', serif;
         margin-top: 45px;
         color: #000;
+        @include breakpoint(sp) {
+            @include converter-sp(font-size,30);
+            @include converter-sp(margin,30,0,0);
+        }
     }
     &__desc {
         margin-top: 30px;
+        @include breakpoint(sp) {
+            @include converter-sp(font-size,16);
+            @include converter-sp(margin,20,0,0);
+        }
     }
 }
 
@@ -201,12 +250,23 @@
     color: #fff;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
+    @include breakpoint(sp) {
+        height: 41.7121vw;
+        @include converter-sp(padding, 20,40);
+    }
     &__title {
         font-family: 'Questrial', serif;
         font-size: 3.6rem;
+        @include breakpoint(sp) {
+           @include converter-sp(font-size,36);
+        }
     }
     &__desc {
         font-size: 2.2rem;
         margin-top: 65px;
+        @include breakpoint(sp) {
+           @include converter-sp(font-size,22);
+           @include converter-sp(margin,65,0,0);
+        }
     }
 }

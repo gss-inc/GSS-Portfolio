@@ -4,9 +4,18 @@
         color: #000;
         font-size: 2.2rem;
         margin-bottom: 80px;
+        @include breakpoint(sp) {
+            @include converter-sp(margin,0,0,40);
+            @include converter-sp(font-size,22);
+        }
         &--slider {
             display: inline;
             margin: 0;
+            @include breakpoint(sp) {
+                display: block;
+                @include converter-sp(margin,0,0,40);
+                @include converter-sp(font-size,22);
+            }
         }
     }
 }

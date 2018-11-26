@@ -3,10 +3,18 @@
     display: flex;
     align-items: center;
     padding: 0 30px;
+    @include breakpoint(sp) {
+        height: 7.823vw;
+        @include converter-sp(padding,0,30);
+        @include converter-sp(font-size,16);
+    }
     &--bordered {
         border: 1px solid #ddd;
         margin-top: 45px;
         color: #fff;
+        @include breakpoint(sp) {
+            @include converter-sp(margin,45,0,0);
+        }
         &:hover {
             background-color: #fff;
             color: #000;
@@ -19,5 +27,9 @@
     &__img {
         margin-left: 15px;
         filter: brightness(100);
+        @include breakpoint(sp) {
+            @include converter-sp(margin,0,0,0,15);
+            width: 1.695vw;
+        }
     }
 }

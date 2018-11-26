@@ -5,10 +5,23 @@
   height: 105px;
   max-width: 1200px;
   margin: 0 auto;
+  @include breakpoint(sp) {
+    @include converter-sp(padding, 0, 40);
+    height: 13.69vw;
+  }
+  img {
+    @include breakpoint(sp) {
+      width: 39.38vw;
+    }
+  }
   &__contact {
     color: #000;
     font-size: 1.4rem;
     font-weight: 800;
     text-transform: uppercase;
+    @include breakpoint(sp) {
+      @include converter-sp(font-size,16);
+    }
+
   }
 }
