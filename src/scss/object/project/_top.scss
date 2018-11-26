@@ -178,7 +178,7 @@
                 color: #fff;
                 @include converter-sp(padding,5,0);
                 @include converter-sp(font-size,16);
-                background: linear-gradient(45deg, #f76b1c 0%, #f76b1c 34%, #fad961 100%);
+                background: #3535357d;
             }
             img {
                 @include breakpoint(sp) {
